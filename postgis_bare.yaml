@@ -7,7 +7,7 @@ metadata:
     cnpg.io/reload: "false"
 stringData:
   username: postgres
-  password: admin123
+  password: ddddd
 ---
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
@@ -85,7 +85,7 @@ spec:
         - name: PGADMIN_DEFAULT_EMAIL
           value: "admin@domain.com"
         - name: PGADMIN_DEFAULT_PASSWORD
-          value: "admin123"
+          value: "cccc"
         ports:
         - containerPort: 80
         volumeMounts:
