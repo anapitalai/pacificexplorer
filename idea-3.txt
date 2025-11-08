@@ -1,0 +1,25 @@
+Challenge #3
+Beyond Horizons - Redefining
+Travel with Space Innovation
+
+Use space technologies to transform how we explore and experience the world.
+Leverage assets such as satellite navigation, Copernicus Earth observation data,
+or climate monitoring tools to create solutions that promote sustainable tourism,
+interactive travel experiences, and personalised adventures. Bring travellers
+closer to Earth's beauty while supporting environmental preservation.
+
+Your solution should focus on:
+
++ Leveraging satellite imagery, Galileo positioning, or Copernicus data to
+enhance personalised and safer travel experiences.
+
++ Promoting sustainable and environmentally conscious exploration.
+
+* Creating immersive or interactive travel solutions that connect people to the
+planet in innovative ways.
+
++ Enable travel providers to enhance their services to craft unforgettable, eco-
+conscious journeys.
+
+
++ Find hotels near the tourist locations, look in sentinel 2 image

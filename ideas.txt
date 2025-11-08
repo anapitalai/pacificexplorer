@@ -1,0 +1,114 @@
+6. JUDGING CRITERIA
+Both at the local level and the European level your solutions will be judged against three simple criteria.
+
+Relevance (33%) - Does the project address one of the hackathon's three challenges? Does the project make use of Copernicus, 
+Galileo and/or EGNOS data and signals?
+
+Innovativeness (33%) - How innovative is the idea compared to products/services that are already on the market? 
+Is there potential for a viable business case?
+
+Quality of the team (33%) - Do the technical, business and creative expertise of the team members 
+match the needs of the project? 
+
+
+
+Submit your Big Idea for one of the three exciting challenges:
+
+
+🎮 Immersive Gameplay: use EU space data to create interactive, data-driven gaming experiences.
+🏃 Space-Powered Sports Performance: enhance training and fan engagement with precision data.
+✈️ Beyond Horizons: rethink travel through sustainable, connected and personalised solutions.
+
+
+#3 Beyond horizons: redefining travel with space innovation. Leverage satellite imagery and 
+navigation for safer, sustainable travel. Help providers personalise trips or design 
+immersive apps that connect travellers to Earth’s beauty — even remotely.
+
+
+
+Our ideas
+Rua Puka
+
+Coastal Erosion and Marine Watch. It’s a satellite-based tool that helps track shoreline changes, sediment build-up, and coral bleaching over time. The idea is to give coastal communities and fisheries groups an easy way to see how their coastlines and reefs are changing.
+It would use Copernicus Sentinel-2 and Sentinel-3 for detecting shoreline shifts and chlorophyll changes, Galileo GNSS for accurate geo-tagging of field photos or community observations, and IRIS² for sending data or alerts from remote islands where coverage is poor.
+
+It could be really handy for CCDA or local fisheries offices that want a quick way to monitor coastal changes. We can keep it open source and free by using Sentinel data, MapLibre or Leaflet for maps, PostGIS for data storage, and hosting it on GitHub
+
+We could also link it with FAO’s SEPAL platform for analyzing satellite data and Collect Earth for community validation. That way, local users could tag erosion spots or coral bleaching areas, and those updates could feed straight into the dashboard.
+
+I’m not too sure about the app development or coding side at this point, but I think it’s a practical idea that could work well for PNG’s coastal context.
+
+
+Den Einstein
+The perception here is to build a personalized tourism app incorporating satellite data such as Copernicus imagery, geotagged spatial datasets, 
+together with Galileo navigation that can assist tourists. They will use this app to discover the hidden wonders of the Pacific. That includes 
+remote islands, reefs, rivers, streams, and mountains etc... before touring pacific islands countries based on their interest.
+
+Camilla Y
+
+1. Choose one province and highlight tourist attraction sights
+
+2. Entire country but specific themes/sights. Say for example ;
+-costal attractions like beaches and reefs, marine attractions and island resorts or 
+-inland attractions like wildlife,mountains,valleys, treks, waterfalls, etc or 
+-Georthermal attractions:volcanoes/hotsprings, etc
+
+You can think of other themes; maybe what each provinces/towns can offer in terms of tourism sights.
+
+
++++++++++++Den
+Step 1: Data collection and integration
+
+-          Copernicus imagery,
+
+-          Galileo GNSS data
+
+-          Geotagged spatial datasets
+
+-          Sentinel 1, 2, 3 imageries
+
+-          Land cover reefs, vegetation, coastlines
+
+Step 2: Data processing and analytics layer
+
+·         Image classification (Copernicus image)
+
+·         Spatial clustering of attractions
+
+·         Terrain and route suitability modeling
+
+·         Environmental sensitivity mapping
+
+·         Integrating tourism infrastructure data
+
+Step 3: Personalization engine
+
+·         User profile inputs: tourists’ interests like adventure, culture, nature, diving, hiking, etc..
+
+·         Duration and budget
+
+·         Accessibility preferences
+
+·         AI or machine learning recommendation system
+
+Step 4: App interface and user experience
+
+·         Interactive 3D map with Copernicus base layers
+
+·         Galileo navigation with an augmented reality guide for routes
+
+·         Overlay of real-time weather updates, including land, sea, and air
+
+·         Discover mode, virtual preview of the destination
+
+·         Sustainable tourism indicators (Visitor density)
+
+Step 5. User action/Results
+
+·         Generate personalized travel itineraries
+
+·         They will download an offline navigation map (Galileo-assisted)
+
+·         Book eco lodge or certified guides
+
+·         Share travel experiences

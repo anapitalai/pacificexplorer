@@ -1,0 +1,10 @@
+Authentication and Authorization
++ admin
++ tourist
++ hotel_owner
++ user
+
+-admin is the super use who is able to add new tourist destinations,etc
+-tourist is able to make hotel reservations,create tourist plans,routes,make payments,etc
+-hotel_owner is able to add new hotels only
+-user is an unauthenticated user, views only

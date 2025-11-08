@@ -1,0 +1,92 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run tests
+      run: npm test
+
+    - name: Build application
+      run: npm run build
+
+    - name: Setup SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H 170.64.195.201 >> ~/.ssh/known_hosts
+
+    - name: Deploy to server
+      run: |
+        # Create deployment archive
+        tar -czf deploy.tar.gz \
+          --exclude='node_modules' \
+          --exclude='.next' \
+          --exclude='.git' \
+          --exclude='.env.local' \
+          --exclude='*.log' \
+          .
+
+        # Upload and deploy
+        scp deploy.tar.gz root@170.64.195.201:/opt/
+
+        ssh root@170.64.195.201 << 'EOF'
+          set -e
+          cd /opt
+
+          # Backup current deployment
+          if [ -d "pacific-explorer" ]; then
+            BACKUP_NAME="pacific-explorer-backup-$(date +%Y%m%d-%H%M%S)"
+            mv pacific-explorer "$BACKUP_NAME"
+            echo "Backup created: $BACKUP_NAME"
+          fi
+
+          # Extract new deployment
+          tar -xzf deploy.tar.gz
+          mv deploy.tar.gz pacific-explorer
+
+          cd pacific-explorer
+
+          # Deploy with Docker
+          docker-compose down || true
+          docker-compose up -d --build
+
+          # Wait for services
+          sleep 30
+
+          # Health check
+          if curl -f http://localhost:8082/api/health; then
+            echo "✅ Deployment successful!"
+          else
+            echo "❌ Health check failed!"
+            exit 1
+          fi
+        EOF
+
+    - name: Notify deployment status
+      if: always()
+      run: |
+        if [ ${{ job.status }} == 'success' ]; then
+          echo "🎉 Deployment completed successfully!"
+        else
+          echo "❌ Deployment failed!"
+        fi

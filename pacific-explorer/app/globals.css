@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* PNG National Colors */
+  --png-red: #CE1126;
+  --png-yellow: #FCD116;
+  --png-black: #000000;
+  --png-white: #FFFFFF;
+  
+  /* Pacific Ocean Theme */
+  --ocean-50: #f0f9ff;
+  --ocean-100: #e0f2fe;
+  --ocean-200: #bae6fd;
+  --ocean-300: #7dd3fc;
+  --ocean-400: #38bdf8;
+  --ocean-500: #0ea5e9;
+  --ocean-600: #0284c7;
+  --ocean-700: #0369a1;
+  --ocean-800: #075985;
+  --ocean-900: #0c4a6e;
+  
+  /* Paradise Theme */
+  --paradise-green: #10B981;
+  --paradise-coral: #F97316;
+  --paradise-sand: #FEF3C7;
+  --paradise-sky: #38BDF8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* PNG Color Palette */
+  --color-png-red: var(--png-red);
+  --color-png-yellow: var(--png-yellow);
+  --color-png-black: var(--png-black);
+  --color-png-white: var(--png-white);
+  
+  /* Ocean Colors */
+  --color-ocean-50: var(--ocean-50);
+  --color-ocean-100: var(--ocean-100);
+  --color-ocean-200: var(--ocean-200);
+  --color-ocean-300: var(--ocean-300);
+  --color-ocean-400: var(--ocean-400);
+  --color-ocean-500: var(--ocean-500);
+  --color-ocean-600: var(--ocean-600);
+  --color-ocean-700: var(--ocean-700);
+  --color-ocean-800: var(--ocean-800);
+  --color-ocean-900: var(--ocean-900);
+  
+  /* Paradise Colors */
+  --color-paradise-green: var(--paradise-green);
+  --color-paradise-coral: var(--paradise-coral);
+  --color-paradise-sand: var(--paradise-sand);
+  --color-paradise-sky: var(--paradise-sky);
+  
+  /* Custom Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes birdFly {
+    0% {
+      transform: translateX(-100%) translateY(0) scale(0.8);
+    }
+    100% {
+      transform: translateX(100vw) translateY(-50px) scale(1);
+    }
+  }
+  
+  --animate-fade-in: fadeIn 0.6s ease-in-out;
+  --animate-slide-up: slideUp 0.5s ease-out;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-bird-fly: birdFly 20s linear infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Utility classes for animations */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-bird-fly {
+  animation: birdFly 20s linear infinite;
+}
+
+/* Gradient backgrounds */
+.bg-png-gradient {
+  background: linear-gradient(135deg, var(--png-red) 0%, var(--png-yellow) 100%);
+}
+
+.bg-ocean-gradient {
+  background: linear-gradient(to bottom, var(--ocean-400), var(--ocean-600));
+}
+
+.bg-paradise-gradient {
+  background: linear-gradient(135deg, var(--paradise-sky) 0%, var(--paradise-green) 100%);
+}
